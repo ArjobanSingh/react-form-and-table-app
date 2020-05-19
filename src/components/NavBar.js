@@ -15,7 +15,7 @@ const NavBar = ({activePage, openFormPage, openTablePage}) => {
            <nav className="nav-Container">
                 <div className={activePage.formPageOpened? 
                     "nav-item selected-title" :
-                    "nav-item"}
+                    "nav-item unselected-title"}
                     onClick={openForm}>
                         <p className="title-text">
                              Form
@@ -24,7 +24,7 @@ const NavBar = ({activePage, openFormPage, openTablePage}) => {
                 </div>
                 <div className={activePage.formPageOpened === false? 
                     "nav-item selected-title" :
-                    "nav-item"}
+                    "nav-item unselected-title"}
                     onClick={openTable}>
                      <p className="title-text">
                         Table

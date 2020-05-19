@@ -16,12 +16,6 @@
   opacity: 1;
 }
 
-.nav-item:hover{
-  color: white;
-  background-color:  #8870C9;
-  cursor: pointer;
-}
-
 .selected-title {
   border-bottom: 2px solid #8870C9;
   color: #8870C9;
@@ -30,6 +24,12 @@
 
 .unselected-title {
   color: #404B69;
+}
+
+.unselected-title:hover {
+  color: white;
+  background-color:  #8870C9;
+  cursor: pointer;
 }
 
 

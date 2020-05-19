@@ -22,8 +22,7 @@ const MainApp = ({activePage}) => {
 
 MainApp.propTypes = {
     activePage: PropTypes.object.isRequired,
-    openFormPage: PropTypes.func.isRequired,
-    openTablePage: PropTypes.func.isRequired
+
 };
 
 const mapStateToProps = (state) => {
