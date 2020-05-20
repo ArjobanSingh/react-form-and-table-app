@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const TablePage = props => {
     return (
-        <div>
-            Table page
+        <div className="TablePageContainer">
+
         </div>
     );
 };

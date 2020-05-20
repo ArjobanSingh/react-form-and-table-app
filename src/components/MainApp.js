@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 
 const MainApp = ({activePage}) => {
     return (
-        <div>
+        <div >
             <NavBar />
             {activePage.formPageOpened?
                 <FormPage /> :
