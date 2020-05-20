@@ -5,29 +5,42 @@ const InputType = props => {
     if (props.type === "tel") {
         return (
             <div className="inputs">
-                <label for={props.uId} className="labels">{props.label}</label>
+                <label htmlFor={props.uId} className="labels">{props.label}</label>
                 <div className="POCI" />
                 <input type={props.type} className="input-boxes" id={props.uId} required autoFocus maxLength="10"/><br />
             </div>
         );
     }
     
-    // else if (props.type == "radio") {
-    //     return (
-    //         <div className="radio-inputs">
-    //             <input type="radio" id="male" name="gender" value="male" />
-    //             <label for="male">Male</label><br />
-    //             <input type="radio" id="female" name="gender" value="female" />
-    //             <label for="female">Female</label><br />
-    //             <input type="radio" id="other" name="gender" value="other" />
-    //             <label for="other">Other</label>
-    //         </div>
-    //     )
-    // }
+    else if (props.type == "radio") {
+        return (
+            <div className="inputs">
+                <p className="form-desc">{props.label}
+                </p>
+                <div className="radio-inputs">
+                        <label className="radio-inline form-desc">
+                            <input className="radio-option" type="radio" name={props.uId} required/>Excellent
+                        </label>
+                        <label className="radio-inline form-desc">
+                            <input className="radio-option" type="radio" name={props.uId} />Good
+                        </label>
+                        <label className="radio-inline form-desc">
+                            <input className="radio-option" type="radio" name={props.uId} />Fair
+                        </label>
+                        <label className="radio-inline form-desc">
+                            <input className="radio-option" type="radio" name={props.uId} />Bad
+                        </label>
+                </div>
+                <br />
+            </div>
+            
+
+        )
+    }
 
     return (
         <div className="inputs">
-            <label for={props.uId} className="labels">{props.label}</label>
+            <label htmlFor={props.uId} className="labels">{props.label}</label>
              <div className="POC" data-placeholder={props.placeholderData}></div>
             <input type={props.type} className="input-boxes" id={props.uId} required autoFocus/><br />
         </div>

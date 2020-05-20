@@ -44,12 +44,13 @@
 /* FormPage and TablePage css */
 
 .FormPageContainer {
+  height: 90%;
+  width: 100%;
   animation-name: fade-in;
   animation-duration: 2s;
   position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: whitesmoke;
+  background: whitesmoke;
+  overflow-y: scroll;
 }
 
 .TablePageContainer {
@@ -71,12 +72,14 @@
 }
 
 .formContainer{
+  margin-left:20px;
+  margin-right: 20px;
+  margin-bottom: 50px;
   display: grid;
-  background-color: #FFFFFF;
-  height: 75%;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  margin: 15px;
+  background: #FFFFFF;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-gap: 50px;
+  padding-bottom: 50px;
 }
 
 .bar-title{
@@ -105,7 +108,7 @@
   flex-direction: column;
   margin-left: 1.5rem;
   margin-top: 1.5rem;
-  margin-right: 3rem;
+  margin-right: 3.5rem;
 }
 
 .labels {
@@ -155,7 +158,26 @@
 
 .radio-inputs {
   display: flex;
-  margin-left: 1.5rem;
-  margin-top: 1.5rem;
-  margin-right: 3rem;
+  
+}
+
+.radio-inline{
+  margin-right: 1.5rem;
+}
+
+.radio-option{
+  height: 17px;
+  width: 17px;
+}
+
+.submit-btn{
+  position: absolute;
+  right: 3rem;
+  background: #48A44C 0% 0% no-repeat padding-box;
+  border-radius: 3px;
+  opacity: 1;
+  height: 2rem;
+  width: 5rem;
+  border-radius: 5px;
+  color: white;
 }
