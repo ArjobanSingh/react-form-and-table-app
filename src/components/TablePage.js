@@ -1,7 +1,6 @@
-import React, {useMemo, useState, useEffect} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Table from './Table'
-import data from './raw-data'
 
 import {connect} from 'react-redux'
 
@@ -16,18 +15,13 @@ const TablePage = props => {
                 sort: 'asc',
               },
               {
-                label: 'TextField',
-                field: 'textVal',
+                label: 'UserName',
+                field: 'nameVal',
                 sort: 'asc',
               },
               {
                 label: 'Phone Number',
                 field: 'phoneVal',
-                sort: 'asc',
-              },
-              {
-                label: 'UserName',
-                field: 'nameVal',
                 sort: 'asc',
               },
               {
