@@ -16,7 +16,9 @@ const saveFormData = (data) => {
     // console.log("saved data", data)
     return {
         type : SAVE_FORM_DATA,
-        payload: data
+        payload: {
+            data
+        }
     }
 }
 

@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 
 import { Provider } from 'react-redux'
-import store from './redux/store'
+import {store,persistor} from './redux/store'
+import { PersistGate } from 'redux-persist/integration/react'
 
 import MainApp from "./components/MainApp"
 
@@ -12,7 +13,9 @@ function App() {
 
   return (
     <Provider store={store}>
-      <MainApp />
+      <PersistGate loading={null} persistor={persistor}>
+        <MainApp />
+      </PersistGate>
     </Provider>
   );
 }

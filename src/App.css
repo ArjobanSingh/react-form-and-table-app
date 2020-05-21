@@ -35,7 +35,7 @@
 
 .title-text{
   position: relative;
-  bottom: 5px;
+  top:10px;
   text-align: center;
   font: Medium 14px/17px Roboto;
 }
@@ -56,7 +56,8 @@
 .TablePageContainer {
   animation-name: fade-in;
   animation-duration: 2s;
-
+  padding-left: 0.5rem;
+  padding-right: 2rem;
 }
 
 @keyframes fade-in {
@@ -193,4 +194,8 @@
   letter-spacing: 0px;
   color: #E91E63;
   opacity: 1;
+}
+
+.table-container{
+  overflow-x: scroll;
 }

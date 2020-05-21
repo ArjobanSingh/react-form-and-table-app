@@ -76,6 +76,7 @@ const Form = props => {
         }
 
         const data = {
+            formName:"Aromatic Bar",
             textVal,
             phoneVal,
             nameVal,
@@ -85,25 +86,21 @@ const Form = props => {
             overallRadioSelected,
             cleaninessRadioSelected
         }
-        saveFormData(data)
+        props.saveFormData(data)
+            resetAll()
             return
-        // if (/\S/.test(phoneVal) && /\S/.test(emailVal)) {
-        //     // means these values are not empty or just whitespace
 
-        //     if (! phonenumber(phoneVal)) {
-        //         // phone number is not 10 digit valid number
-        //         setPhoneValid(false)
-        //         return
-        //     }
-        //     if (! validateEmail(emailVal)) {
-        //         // email is not valid
-        //         setEmailVal(false)
-        //         return
-        //     }
-        //     alert("right")
-        //     return;
-        // }
+    }
 
+    const resetAll = () => {
+        setTextVal("")
+        setPhoneVal("")
+        setNameVal("")
+        setEmailVal("")
+        setServiceRadioSelected("Excellent")
+        setBevarageRadioSelected("Excellent")
+        setOverallRadioSelected("Excellent")
+        setCleaninessRadioSelected("Excellent")
     }
 
     const changeTextVal = (event) => {
