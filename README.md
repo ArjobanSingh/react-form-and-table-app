@@ -10,7 +10,7 @@ all input fields are validated correctly before submission, if found any error, 
 This React app uses **Redux** for state management, and **redux-persist** to store data locally,
 Table is created using *mdbootstrap*
 
-Major dependencies used:
+### Major dependencies used:
     1) React
     2) Redux
     3) react-redux
