@@ -226,7 +226,17 @@ const Form = props => {
 };
 
 Form.propTypes = {
-    
+    saveFormData: PropTypes.func.isRequired,
+    nameVal: PropTypes.func.isRequired,
+    phoneVal: PropTypes.func.isRequired, 
+    serviceVal: PropTypes.func.isRequired,
+    beverageVal: PropTypes.func.isRequired, 
+    cleaninessVal: PropTypes.func.isRequired,
+    overallVal: PropTypes.func.isRequired, 
+    resetVals: PropTypes.func.isRequired, 
+    emailVal: PropTypes.func.isRequired,
+    resetData: PropTypes.func.isRequired,
+    tempValues: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => {

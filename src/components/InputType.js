@@ -36,7 +36,7 @@ const InputType = props => {
         );
     }
     
-    else if (props.type == "radio") {
+    else if (props.type === "radio") {
         return (
             <div className="inputs">
                 <p className="form-desc">
@@ -140,7 +140,11 @@ InputType.propTypes = {
     uId: PropTypes.string,
     label: PropTypes.string.isRequired,
     placeholderData : PropTypes.string,
-    type : PropTypes.string.isRequired
+    type : PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    changeValue: PropTypes.func.isRequired,
+    isValid: PropTypes.bool,
+    autofocusThis: PropTypes.bool
 };
 
 export default InputType;

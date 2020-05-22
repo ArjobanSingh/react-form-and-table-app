@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { MDBDataTableV5, MDBDataTable } from 'mdbreact';
+import {  MDBDataTable } from 'mdbreact';
 
 const Table = (props) => {
     return (<MDBDataTable 
@@ -15,7 +15,7 @@ const Table = (props) => {
 }
 
 Table.propTypes = {
-    
+    data: PropTypes.object.isRequired
 };
 
 export default Table;

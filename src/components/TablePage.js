@@ -74,7 +74,8 @@ const TablePage = props => {
 };
 
 TablePage.propTypes = {
-    
+    savedData: PropTypes.array,
+    openFormPage: PropTypes.func
 };
 
 const mapStateToProps = (state) => {

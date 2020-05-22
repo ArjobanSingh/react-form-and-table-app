@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Form from "./Form"
 
 const FormPage = props => {
@@ -16,8 +15,5 @@ const FormPage = props => {
     );
 };
 
-FormPage.propTypes = {
-    
-};
 
 export default FormPage;
