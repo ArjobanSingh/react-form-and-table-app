@@ -71,7 +71,7 @@ function savedFromData(state =  [], action) {
    
     switch(action.type) {
         case SAVE_FORM_DATA:
-            return [...state, action.payload.data]
+            return [action.payload.data, ...state]
         case RESET_FORM_HISTORY:
             return []
         default:

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Table from './Table'
 
+import {openFormPage} from "../redux/actionCreators"
 import {connect} from 'react-redux'
 
 
@@ -22,7 +23,7 @@ const TablePage = props => {
               {
                 label: 'Phone Number',
                 field: 'phoneVal',
-                sort: 'asc',
+                sort: 'asc'
               },
               {
                 label: 'Email',
@@ -32,23 +33,23 @@ const TablePage = props => {
               {
                 label: 'Service Rating',
                 field: 'serviceRadioSelected',
-                sort: 'desc',
+                sort: 'asc',
               },
               {
                 label: 'Bevarage Rating',
                 field: 'bevarageRadioSelected',
-                sort: 'desc',
+                sort: 'asc',
               },
               {
                 label: 'Cleaniness Rating',
                 field: 'cleaninessRadioSelected',
-                sort: 'desc',
+                sort: 'asc',
                 
               },
               {
                 label: 'Overall Rating',
                 field: 'overallRadioSelected',
-                sort: 'desc',
+                sort: 'asc',
 
 
               }
@@ -62,7 +63,12 @@ const TablePage = props => {
             <div className="table-container">
                 <Table data={tableData}/>
             </div>:
-            <div>No data yet</div>}
+            <div className="no-data-div">
+              <p><b>No data yet, Please fill the form</b></p>
+              <button 
+              class="my-btn"
+              onClick={() => props.openFormPage()}>Go to Form</button>
+            </div>}
         </div>
     );
 };
@@ -76,4 +82,6 @@ const mapStateToProps = (state) => {
         savedData : state.savedFromData
     }
 } 
-export default connect(mapStateToProps)(TablePage);
+
+const mapDispatchToProps = {openFormPage}
+export default connect(mapStateToProps, mapDispatchToProps)(TablePage);

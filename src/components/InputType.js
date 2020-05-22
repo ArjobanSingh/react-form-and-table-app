@@ -20,7 +20,7 @@ const InputType = props => {
                         "input-boxes input-boxes-error-border" } 
                     id={props.uId} 
                     value={props.value} 
-                    required autoFocus maxLength="10"
+                    required maxLength="10"
                     onChange={props.changeValue}
                     ref={props.reference}
                 />
@@ -28,7 +28,7 @@ const InputType = props => {
                     className={props.isValid ? 
                                 "hideError":
                                 "showError"}>
-                        Phone number is invalid, Please type 10 digit valid number
+                        Error: Phone number is invalid, Please type 10 digit valid number
                 </p>
                <br />
             </div>
@@ -120,14 +120,14 @@ const InputType = props => {
                 className={props.isValid ? 
                     "hideError":
                     "showError"}>
-                        Invalid Email address, Please type in valid email address
+                        Error: Invalid or empty Email address.
                 </p>
             :
                 <p 
                     className={props.isValid ? 
                                 "hideError":
                                 "showError"}>
-                    This is required field
+                    Error: This is required field
                 </p>
             }
             <br />

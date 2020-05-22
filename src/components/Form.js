@@ -1,6 +1,9 @@
 import React, {useState, useRef, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import InputType from "./InputType"
+
+import 'react-responsive-modal/styles.css';
+import { Modal } from 'react-responsive-modal';
   
 import {
         saveFormData, 
@@ -15,6 +18,7 @@ import {
         resetData} from "../redux/actionCreators"
 
 import {connect} from "react-redux"
+
 const Form = props => {
 
     // for cleaning fields before unmounting
@@ -23,6 +27,9 @@ const Form = props => {
             props.resetVals()
         })
     }, [])
+
+    // state for success modal
+    const [open, setOpen] = useState(false)
 
     // temporary state for validating fields
     const [isPhoneValid, setPhoneValid] = useState(true)
@@ -58,6 +65,7 @@ const Form = props => {
     const submitForm = (e) => {
         e.preventDefault()
 
+        // regex expression to check, if form is not tmpty or just whitespace
         if (!(/\S/.test(props.tempValues.name)) ) {
             setNameValid(false)
             nameInputRef.current.focus();
@@ -66,7 +74,7 @@ const Form = props => {
             setNameValid(true)
         }
 
-        if (!(/\S/.test(props.tempValues.phoneVal)) || ! phonenumber(props.tempValues.phoneVal)) {
+        if (!(/\S/.test(props.tempValues.phoneVal)) || !phonenumber(props.tempValues.phoneVal)) {
             setPhoneValid(false)
             phoneInputRef.current.focus();
             return
@@ -94,6 +102,7 @@ const Form = props => {
         }
         props.saveFormData(data)
             props.resetVals()
+            setOpen(true)
             nameInputRef.current.focus()
             // props.resetData()
             return
@@ -102,7 +111,12 @@ const Form = props => {
 
   
     const chanegPhoneVal = (event) => {
-        props.phoneVal(event.target.value)
+        // let isNum = /^\d+$/.test(event.target.value);
+
+        // if (isNum) props.phoneVal(event.target.value)
+        if (!isNaN(event.target.value)) {
+            props.phoneVal(event.target.value)
+        }
     } 
     const changeNameVal = (event) => {
         props.nameVal(event.target.value)
@@ -125,6 +139,7 @@ const Form = props => {
 
 
     return (
+        <>
         <form className="formContainer">
             <div className="leftInputBox">
                 <InputType type="text" 
@@ -189,6 +204,21 @@ const Form = props => {
                     onClick={submitForm}/>                                          
             </div>
         </form>
+        <Modal
+            open={open}
+            onClose={() => setOpen(false)}
+            center
+            classNames={{
+                animationIn: 'customEnterAnimation',
+                animationOut: 'customLeaveAnimation',
+              }}
+            animationDuration={1000}
+            >
+            <p className="success-msg">
+                Thank you for completing the information. 
+            </p>
+        </Modal>
+        </>
     );
 };
 
