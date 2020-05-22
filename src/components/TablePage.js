@@ -66,7 +66,7 @@ const TablePage = props => {
             <div className="no-data-div">
               <p><b>No data yet, Please fill the form</b></p>
               <button 
-              class="my-btn"
+              className="my-btn"
               onClick={() => props.openFormPage()}>Go to Form</button>
             </div>}
         </div>
