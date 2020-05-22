@@ -23,6 +23,7 @@ const InputType = props => {
                     required maxLength="10"
                     onChange={props.changeValue}
                     ref={props.reference}
+                    autoFocus={props.autofocusThis}
                 />
                 <p 
                     className={props.isValid ? 
@@ -113,7 +114,7 @@ const InputType = props => {
                 onChange={props.changeValue} 
                 ref={props.reference} 
                 required 
-                autoFocus/>
+                autoFocus={props.autofocusThis}/>
 
             {props.uId === "email"?
                 <p 

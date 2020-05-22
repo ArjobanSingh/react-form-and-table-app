@@ -149,7 +149,8 @@ const Form = props => {
                     value={props.tempValues.name} 
                     changeValue={changeNameVal} 
                     isValid={isNameValid}
-                    reference={nameInputRef} /> 
+                    reference={nameInputRef} 
+                    autofocusThis={true}/> 
 
                 <InputType 
                     type="tel" 
@@ -159,7 +160,8 @@ const Form = props => {
                     value={props.tempValues.phoneVal} 
                     changeValue={chanegPhoneVal} 
                     isValid={isPhoneValid} 
-                    reference={phoneInputRef}/>
+                    reference={phoneInputRef}
+                    autofocusThis={false}/>
                 
             </div>
             <div className="rightInputBox">
@@ -171,7 +173,8 @@ const Form = props => {
                     value={props.tempValues.emailVal} 
                     changeValue={changeEmailVal} 
                     isValid={isEmailValid}
-                    reference={emailInputRef}/>
+                    reference={emailInputRef}
+                    autofocusThis={false}/>
 
                 <InputType 
                     type="radio" 
